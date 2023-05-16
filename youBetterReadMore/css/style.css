@@ -22,7 +22,8 @@ body div.read-more {
     background-color: white;
     max-width: 300px;
     border-radius: 25px;
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: column;
 }
 body div.read-more img {
     width: 100%;
