@@ -1,45 +1,45 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 body {
-    background-color: #202020;
+  background-color: #202020;
 }
 
 body h1 {
-    color: white;
-    text-align: center;
-    padding: 4rem;
+  color: white;
+  text-align: center;
+  padding: 4rem;
 }
 
 body div.center {
-    max-width: 800px;
-    margin: auto;
+  max-width: 800px;
+  margin: auto;
 }
 body div.read-more {
-    margin: auto 18px;
-    background-color: white;
-    max-width: 300px;
-    border-radius: 25px;
-    display: inline-block;
+  margin: auto 18px;
+  background-color: white;
+  max-width: 300px;
+  border-radius: 25px;
+  display: inline-block;
 }
 body div.read-more img {
-    width: 100%;
-    border-radius: 25px 25px 0 0;
+  width: 100%;
+  border-radius: 25px 25px 0 0;
 }
 body div.read-more div.read-more-text {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .btn {
-    padding: 1rem;
-    background-color: #834eff;
-    border: none;
-    color: white;
-    margin-top: 1rem;
-    font-weight: bold;
+  padding: 1rem;
+  background-color: #834eff;
+  border: none;
+  color: white;
+  margin-top: 1rem;
+  font-weight: bold;
 }
 .btn:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
