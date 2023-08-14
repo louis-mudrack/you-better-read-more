@@ -39,6 +39,7 @@ body div.read-more div.read-more-text {
   color: white;
   margin-top: 1rem;
   font-weight: bold;
+  border-radius: 25px;
 }
 .btn:hover {
   cursor: pointer;
