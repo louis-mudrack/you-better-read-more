@@ -1,7 +1,7 @@
 ////
 ////    You Better Read More - JS
-////    V 1.2.1 by Louis Mudrack
-////    08/14/2023
+////    V 1.2.2 by Louis Mudrack
+////    10/17/2023
 ////
 ////////////////////
 
@@ -18,7 +18,7 @@ class ReadMore {
     this.openText = openText;
     this.closeText = closeText;
     this.teaserLength = teaserLength;
-    this.readMoreElements = document.querySelectorAll('.read-more');
+    this.readMoreElements = document.querySelectorAll(".read-more");
 
     this.initialize();
   }
@@ -28,18 +28,18 @@ class ReadMore {
    */
   initialize() {
     this.readMoreElements.forEach((element) => {
-      element.classList.add('collapsed');
-      const teaserElement = element.querySelector('.read-more-teaser');
+      element.classList.add("collapsed");
+      const teaserElement = element.querySelector(".read-more-teaser");
       const fullText = teaserElement.firstElementChild.textContent;
-      const teaserText = fullText.substring(0, this.teaserLength) + '...';
+      const teaserText = fullText.substring(0, this.teaserLength) + "...";
 
       if (fullText.length > this.teaserLength) {
         teaserElement.firstElementChild.textContent = teaserText;
-        const button = document.createElement('button');
+        const button = document.createElement("button");
         button.textContent = this.openText;
-        button.classList.add('btn', 'read-more-btn');
-        button.style.width = '100%';
-        button.addEventListener('click', () => {
+        button.classList.add("btn", "read-more-btn");
+        button.style.width = "100%";
+        button.addEventListener("click", () => {
           this.toggleReadMore(element, teaserElement, fullText, button);
         });
         teaserElement.appendChild(button);
@@ -56,9 +56,9 @@ class ReadMore {
    */
   toggleReadMore(element, teaserElement, fullText, button) {
     if (button.textContent === this.openText) {
-      this.expandReadMore(teaserElement, fullText, button);
+      this.expandReadMore(element, teaserElement, fullText, button);
     } else {
-      this.collapseReadMore(teaserElement, fullText, button);
+      this.collapseReadMore(element, teaserElement, fullText, button);
     }
   }
 
@@ -69,9 +69,11 @@ class ReadMore {
    * @param {string} fullText - The full text of the read more content.
    * @param {HTMLElement} button - The "Read More" button.
    */
-  expandReadMore(teaserElement, fullText, button) {
+  expandReadMore(element, teaserElement, fullText, button) {
     teaserElement.firstElementChild.textContent = fullText;
     button.textContent = this.closeText;
+    element.classList.remove("collapsed");
+    element.classList.add("expanded");
   }
 
   /**
@@ -81,11 +83,13 @@ class ReadMore {
    * @param {string} fullText - The full text of the read more content.
    * @param {HTMLElement} button - The "Read More" button.
    */
-  collapseReadMore(teaserElement, fullText, button) {
-    const teaserText = fullText.substring(0, this.teaserLength) + '...';
+  collapseReadMore(element, teaserElement, fullText, button) {
+    const teaserText = fullText.substring(0, this.teaserLength) + "...";
     teaserElement.firstElementChild.textContent = teaserText;
     button.textContent = this.openText;
+    element.classList.remove("expanded");
+    element.classList.add("collapsed");
   }
 }
 
-new ReadMore('Read More', 'Close', 200);
+new ReadMore("Read-More", "Close", 200);
